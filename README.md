@@ -148,6 +148,157 @@ Author-InfinitezenCODER & mishra234ansumaan
                     </div>
                 `).join('<hr class="border-gray-200 dark:border-gray-700">');
             };
+            const handleInput = (value) => {
+                if (['+', '-', '*', '/', '%'].includes(value)) {
+                    // Operator handling
+                    if (currentInput === 'Error') return;
+                    justCalculated = false;
+                    const lastChar = expression.slice(-1);
+                    if (['+', '-', '*', '/', '%'].includes(lastChar)) {
+                        // Replace last operator if needed
+                        expression = expression.slice(0, -1) + value;
+                    } else {
+                        expression += currentInput + value;
+                    }
+                    currentInput = '0';
+                } else if (!isNaN(value) || value === '.') {
+                    // Number and dot handling
+                    if (justCalculated || currentInput === '0' || currentInput === 'Error') {
+                        if (value !== '.' || !currentInput.includes('.')) {
+                           currentInput = value;
+                           if(justCalculated) expression = '';
+                           justCalculated = false;
+                        }
+                    } else {
+                        if (value === '.' && currentInput.includes('.')) return;
+                        currentInput += value;
+                    }
+                }
+                updateDisplay();
+            };
+            
+            const calculate = () => {
+                if (currentInput === 'Error' || expression === '') return;
+                
+                let fullExpression = expression + currentInput;
+                const finalExpressionStr = fullExpression.replace(/×/g, '*').replace(/÷/g, '/');
+
+                try {
+                    // Using Function constructor for safer evaluation than eval()
+                    const result = new Function('return ' + finalExpressionStr)();
+                    
+                    if (!isFinite(result)) {
+                        throw new Error("Division by zero");
+                    }
+                    
+                    const formattedResult = parseFloat(result.toPrecision(12));
+                    const historyItem = { expression: `${fullExpression} =`, result: formattedResult };
+                    
+                    history.unshift(historyItem);
+                    if (history.length > 5) {
+                        history.pop();
+                    }
+
+                    expression = '';
+                    currentInput = formattedResult.toString();
+                    justCalculated = true;
+                    
+                    updateDisplay();
+                    updateHistory();
+
+                } catch (error) {
+                    currentInput = 'Error';
+                    expression = '';
+                    justCalculated = true;
+                    updateDisplay();
+                }
+            };
+            
+            const clear = () => {
+                currentInput = '0';
+                expression = '';
+                justCalculated = false;
+                updateDisplay();
+            };
+
+            const backspace = () => {
+                if (justCalculated || currentInput === 'Error') {
+                    clear();
+                    return;
+                }
+                if (currentInput.length > 1) {
+                    currentInput = currentInput.slice(0, -1);
+                } else {
+                    currentInput = '0';
+                }
+                updateDisplay();
+            };
+
+            const sqrt = () => {
+                if(currentInput === 'Error') return;
+                try {
+                    const number = parseFloat(currentInput);
+                    if (number < 0) {
+                        currentInput = 'Error';
+                        expression = '';
+                    } else {
+                        const result = Math.sqrt(number);
+                        const formattedResult = parseFloat(result.toPrecision(12));
+                        
+                        const historyItem = { expression: `√(${currentInput}) =`, result: formattedResult };
+                        history.unshift(historyItem);
+                        if (history.length > 5) history.pop();
+                        
+                        currentInput = formattedResult.toString();
+                        expression = '';
+                        justCalculated = true;
+                    }
+                } catch(e) {
+                    currentInput = 'Error';
+                }
+                updateDisplay();
+                updateHistory();
+            };
+
+            // Event Listeners for buttons
+            calculatorGrid.addEventListener('click', (event) => {
+                const button = event.target.closest('button');
+                if (!button) return;
+
+                const { value } = button.dataset;
+
+                switch (value) {
+                    case '=':
+                        calculate();
+                        break;
+                    case 'clear':
+                        clear();
+                        break;
+                    case 'backspace':
+                        backspace();
+                        break;
+                    case 'sqrt':
+                        sqrt();
+                        break;
+                    default:
+                        handleInput(value);
+                        break;
+                }
+            });
+
+            // Theme Toggle Logic
+            themeToggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                lightIcon.classList.toggle('hidden');
+                darkIcon.classList.toggle('hidden');
+            });
+            
+            // Initial render
+            updateDisplay();
+        });
+    </script>
+</body>
+</html>
 
             
 
