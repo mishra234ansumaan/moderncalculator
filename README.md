@@ -22,7 +22,7 @@ Author-InfinitezenCODER & mishra234ansumaan
             gap: 1rem;
         }
         .btn {
-            transition: all 0.2s ease-in-out;
+            transition: all 0.1s ease-in-out;
         }
         .btn:active {
             transform: scale(0.95);
