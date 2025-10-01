@@ -1,5 +1,5 @@
 # moderncalculator
-//A modern calculator doing all the basic arithmatic operations storing history of last 5 calculations with dark and light theme changing button//
+//A modern calculator doing all the basic arithmatic operations, storing history of last 5 calculations with dark and light theme changing button.//
 <br>
 Author-InfinitezenCODER & mishra234ansumaan
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ Author-InfinitezenCODER & mishra234ansumaan
         .btn:active {
             transform: scale(0.95);
         }
-        /* Scrollbar styling for history */
+        /* Scrollbar style for history */
         #history-list::-webkit-scrollbar {
             width: 6px;
         }
