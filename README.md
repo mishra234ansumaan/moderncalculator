@@ -51,10 +51,10 @@ Author-InfinitezenCODER & mishra234ansumaan
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-center justify-center min-h-screen p-4 transition-colors duration-300">
 
-    <div class="w-full max-w-md mx-auto">
-        <!-- Calculator Body -->
-        <div class="bg-white dark:bg-black rounded-3xl shadow-2xl p-6">
-            <!-- Header: Theme Toggle -->
+<div class="w-full max-w-md mx-auto">
+<!-- Calculator Body -->
+ <div class="bg-white dark:bg-black rounded-3xl shadow-2xl p-6">
+<!-- Header: Theme Toggle -->
             <div class="flex justify-between items-center mb-6">
                 <h1 class="text-xl font-bold text-gray-500 dark:text-gray-400">Calculator</h1>
                 <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
@@ -64,13 +64,13 @@ Author-InfinitezenCODER & mishra234ansumaan
             </div>
 
             <!-- Display Screen -->
-            <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-6 mb-6 text-right break-words">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-6 mb-6 text-right break-words">
                 <div id="expression" class="text-gray-500 dark:text-gray-400 text-xl h-7">&nbsp;</div>
                 <div id="display" class="text-5xl font-bold h-14">0</div>
             </div>
 
             <!-- Buttons Grid -->
-            <div class="calculator-grid">
+<div class="calculator-grid">
                 <!-- Row 1 -->
                 <button data-value="clear" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 text-orange-500 dark:text-orange-400 p-4 rounded-2xl">C</button>
                 <button data-value="backspace" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 text-orange-500 dark:text-orange-400 p-4 rounded-2xl">⌫</button>
@@ -78,25 +78,25 @@ Author-InfinitezenCODER & mishra234ansumaan
                 <button data-value="/" class="btn text-2xl font-semibold bg-yellow-400 dark:bg-yellow-600 text-white p-4 rounded-2xl">÷</button>
                 
                 <!-- Row 2 -->
-                <button data-value="7" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">7</button>
+<button data-value="7" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">7</button>
                 <button data-value="8" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">8</button>
                 <button data-value="9" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">9</button>
                 <button data-value="*" class="btn text-2xl font-semibold bg-green-500 dark:bg-green-600 text-white p-4 rounded-2xl">×</button>
                 
                 <!-- Row 3 -->
-                <button data-value="4" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">4</button>
+<button data-value="4" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">4</button>
                 <button data-value="5" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">5</button>
                 <button data-value="6" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">6</button>
                 <button data-value="-" class="btn text-2xl font-semibold bg-pink-400 dark:bg-pink-600 text-white p-4 rounded-2xl">−</button>
 
                 <!-- Row 4 -->
-                <button data-value="1" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">1</button>
+<button data-value="1" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">1</button>
                 <button data-value="2" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">2</button>
                 <button data-value="3" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">3</button>
                 <button data-value="+" class="btn text-2xl font-semibold bg-red-500 dark:bg-red-600 text-white p-4 rounded-2xl">+</button>
 
                 <!-- Row 5 -->
-                <button data-value="sqrt" class="btn text-2xl font-semibold bg-violet-500 dark:bg-violet-600 text-white p-4 rounded-2xl">√</button>
+<button data-value="sqrt" class="btn text-2xl font-semibold bg-violet-500 dark:bg-violet-600 text-white p-4 rounded-2xl">√</button>
                 <button data-value="0" class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">0</button>
                 <button data-value="." class="btn text-2xl font-semibold bg-gray-200 dark:bg-gray-700 p-4 rounded-2xl">.</button>
                 <button data-value="=" class="btn text-2xl font-semibold bg-blue-500 dark:bg-blue-600 text-white p-4 rounded-2xl">=</button>
@@ -104,7 +104,7 @@ Author-InfinitezenCODER & mishra234ansumaan
         </div>
 
         <!-- History Panel -->
-        <div class="bg-white dark:bg-black rounded-3xl shadow-2xl p-6 mt-6">
+<div class="bg-white dark:bg-black rounded-3xl shadow-2xl p-6 mt-6">
             <h2 class="text-xl font-bold mb-4 text-gray-500 dark:text-gray-400">History</h2>
             <div id="history-list" class="space-y-3 h-32 overflow-y-auto pr-2">
                 <p class="text-gray-400 dark:text-gray-500 text-center">No calculations yet.</p>
@@ -112,8 +112,8 @@ Author-InfinitezenCODER & mishra234ansumaan
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+<script>
+document.addEventListener('DOMContentLoaded', () => {
             // DOM Elements
             const display = document.getElementById('display');
             const expressionDiv = document.getElementById('expression');
