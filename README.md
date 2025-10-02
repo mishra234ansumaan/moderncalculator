@@ -2,14 +2,23 @@
 //A modern calculator doing all the basic arithmatic operations, storing history of last 5 calculations with dark and light theme changing button.//
 <br>
 Author-InfinitezenCODER & mishra234ansumaan
+<br>
 <!DOCTYPE html>
+<br>
 <html lang="en" class="">
+    <br>
 <head>
+    <br>
     <meta charset="UTF-8">
+    <br>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <br>
     <title>Themeable Calculator</title>
+    <br>
     <script src="https://cdn.tailwindcss.com"></script>
+    <br>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <br>
     <style>
         /* Custom styles for better aesthetics */
         body {
